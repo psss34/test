@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IMRG Demo</title>
+<link rel="stylesheet" th:href="@{/IMRG/css/standard.css}" />
+</head>
+
+<body>
+	<div class="centered">
+		<div class="headerdiv">
+			<img th:src="@{/IMRG/images/RFI_Logo.png}" />
+			<h2>Registrazione di un impinato IMRW</h2>
+		</div>
+		
+		<div class="bodydiv">
+			<form action="#" th:action="@{/IMRG/register}" method="post"
+				th:object="${service}">
+				<div class="container">
+					<table align="center">
+					    <tr>
+					      <td align="right">Service ID:</td>
+					      <td align="left"><input type="text" th:field="*{serviceID}" /></td>
+					    </tr>
+					    <tr>
+					      <td align="right">Indirizzo:</td>
+					      <td align="left"><input type="url" th:field="*{address}" /></td>
+					    </tr>
+					    <tr>
+					      <td align="right">Porta:</td>
+					      <td align="left"><input type="text" th:field="*{port}" /></td>
+					    </tr>
+					    <tr>
+					      <td align="right">Regione:</td>
+					      <td align="centered">
+						      <select th:field="*{region}">
+								<option th:each="p : ${listRegion}" th:value="${p}" th:text="${p}" />
+							</select>
+						  </td>
+					    </tr>
+					  </table>
+					<input type="submit" value="Registra impianto">
+				</div>
+			</form>
+		</div>
+		<div id="outdiv">
+			<form action="#" th:action="@{/IMRG/index}">
+				<input type="submit" value="Torna alla Home">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IMRG Demo</title>
+<link rel="stylesheet" th:href="@{/IMRG/css/standard.css}" />
+</head>
+
+<body>
+	<div class="centered">
+		<div class="headerdiv">
+			<img th:src="@{/IMRG/images/RFI_Logo.png}" />
+			<h2>Registrazione avvenuta con successo!</h2>
+		</div>
+		<div class="bodydiv">
+			<div class="container">
+			<table align="center">
+				<tr>
+					<td align="left">Service ID:</td>
+					<td align="left" th:text="${service.serviceID}"></td>
+				</tr>
+								<tr>
+					<td align="left">Indirizzo:</td>
+					<td align="left" th:text="${service.address}"></td>
+				</tr>
+								<tr>
+					<td align="left">Porta:</td>
+					<td align="left" th:text="${service.port}"></td>
+				</tr>
+								<tr>
+					<td align="left">Regione:</td>
+					<td align="left" th:text="${service.region}"></td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		<div id="outdiv">
+			<form action="#" th:action="@{/IMRG/index}">
+				<input type="submit" value="Torna alla Home">
+			</form>
+		</div>
+
+
+	</div>
+</body>
+</html>

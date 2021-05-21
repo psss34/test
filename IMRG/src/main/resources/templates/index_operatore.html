@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IMRG Demo</title>
+<link rel="stylesheet" th:href="@{/IMRG/css/standard.css}" />
+</head>
+
+<body>
+	<div class="centered">
+		<div class="headerdiv">
+			<img th:src="@{/IMRG/images/RFI_Logo.png}" />
+			<h2>IMRG Demo - Pannello Operatore</h2>
+		</div>
+		<div class="bodydiv">
+			<a href="/IMRG/getInfoService" style="font-size:18px">Lista degli IMRW disponibili</a><br/><br/>
+    	</div>
+		<div id="outdiv"></div>
+	</div>
+</body>
+</html>

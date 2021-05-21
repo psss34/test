@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IMRG Demo</title>
+<link rel="stylesheet" th:href="@{/IMRG/css/standard.css}" />
+</head>
+
+<body>
+	<div class="centered">
+		<div class="headerdiv">
+			<img th:src="@{/IMRG/images/RFI_Logo.png}" />
+			<h2>Deregistrazione di un impinato IMRW</h2>
+		</div>
+		
+		<div class="bodydiv">
+	    	<form action="#" th:action="@{/IMRG/deregister}" method="post" th:object="${service}">
+	        <label>Lista degli IMRW:</label>
+	        <select th:field="*{serviceID}">
+	            <option th:each="p : ${listServiceID}" th:value="${p}" th:text="${p}" />
+	        </select>
+	        <br/><br/>
+	        	<input type="submit" value="Deregistra">   
+	   		</form>
+    	</div>
+		<div id="outdiv">
+			<form action="#" th:action="@{/IMRG/index}">
+				<input type="submit" value="Torna alla Home">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
